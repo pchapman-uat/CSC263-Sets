@@ -6,6 +6,12 @@ public class Main {
         randomHashSet(5);
         printHashSet();
         System.out.println(isInHashSet(5));
+        if(removeHashSet(4)) System.out.println("Number 4 was removed");
+        printHashSet();
+    }
+
+    private static boolean removeHashSet(int num){
+        return set.remove(num);
     }
 
     private static boolean isInHashSet(int num){
