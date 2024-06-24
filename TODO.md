@@ -1,5 +1,5 @@
 # Expectation
-[ ]Create a HashSet of integers.
+[X]Create a HashSet of integers.
 [ ]Add elements to the set.
 [ ]Remove elements from the set.
 [ ]Check if an element exists in the set.
