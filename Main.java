@@ -14,11 +14,18 @@ public class Main {
         System.out.println("-".repeat(20));
         userRemoveInHashSet();
         System.out.println("-".repeat(20));
+        printHashSet(set);
+        System.out.println("-".repeat(20));
         Integer[] array = {2,4,1,2,3,4,5,1,4,6};
+        System.out.print("Push enter to continue");
+        scanner.nextLine();
+        scanner.nextLine();
         System.out.println("Unique elements: ");
         System.out.println("Before: ");
+        System.out.println("-".repeat(20));
         printArray(array);
         System.out.println("After: ");
+        System.out.println("-".repeat(20));
         printHashSet(uniqueElements(array));
     }
 
