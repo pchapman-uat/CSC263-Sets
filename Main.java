@@ -8,15 +8,32 @@ public class Main {
     public static void main(String[] args) {
         userGenerateSet();
         System.out.println("-".repeat(20));
-        printHashSet();
+        printHashSet(set);
         System.out.println("-".repeat(20));
         userInHashSet();
         System.out.println("-".repeat(20));
-        if(removeHashSet(4)) System.out.println("Number 4 was removed");
-        printHashSet();
-        System.out.println(uniqueElements(2,4,1,2,3,4,5,1,4,6));
+        userRemoveInHashSet();
+        System.out.println("-".repeat(20));
+        Integer[] array = {2,4,1,2,3,4,5,1,4,6};
+        System.out.println("Unique elements: ");
+        System.out.println("Before: ");
+        printArray(array);
+        System.out.println("After: ");
+        printHashSet(uniqueElements(array));
     }
 
+    private static <T> void printArray(T[] values){
+        for (T value : values) {
+            System.out.println(value);
+        }
+    }
+
+    private static void userRemoveInHashSet(){
+        System.out.println("What number do you want to remove?");
+        int num = scanner.nextInt();
+        if(removeHashSet(num)) System.out.println("Number " + num + " was removed");
+        else System.out.println("Number " + num + " was not removed as it is not in the set");
+    }
     private static void userInHashSet(){
         System.out.println("What number do you want to look for?");
         int num = scanner.nextInt();
@@ -31,7 +48,7 @@ public class Main {
         randomHashSet(len, max);
     }
 
-    private static <T> Set<T> uniqueElements(T... values){
+    private static <T> Set<T> uniqueElements(T[] values){
         Set<T> set = new HashSet<T>();
         for (T t : values) {
             set.add(t);
@@ -45,20 +62,15 @@ public class Main {
     private static boolean isInHashSet(int num){
         return set.contains(num);
     }
-
-
-    private static void randomHashSet(int len){
-        randomHashSet(len, 10);
-    }
     private static void randomHashSet(int len, int max){
         for (int i = 0; i < len; i++) {
             set.add((int)(Math.random()*max));
         }
     }
 
-    private static void printHashSet(){
-        for (Integer i:set) {
-            System.out.println(i);
+    private static <T> void printHashSet(Set<T> set){
+        for (T val:set) {
+            System.out.println(val);
         }
     }
 }
